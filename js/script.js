@@ -914,7 +914,7 @@
 
     const successMessage = document.getElementById('formSuccess');
     const submitButton = form.querySelector('button[type="submit"]');
-    const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbyVJwqxWvpvezPArwkoHlNAHKrHg7nyoRa_CYT2aslJJ0hs2o-z-wW3W-VnuFPXKyuPpQ/exec';
+    const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbw77k6xuUebeKfqHjZA4vLOg0Gqs2WgdFjI9zWvWfTFThz2woe3hDVsgsTTphzZoTJCwA/exec';
 
     const validators = {
       studentName: function (value) {
