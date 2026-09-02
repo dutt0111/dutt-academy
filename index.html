@@ -399,26 +399,26 @@
 
       <form class="contact__form" id="enquiryForm" novalidate>
         <div class="form-row">
-          <label for="studentName">Student Name</label>
+          <label for="studentName">Student Name <span class="form-required" aria-hidden="true">*</span></label>
           <input type="text" id="studentName" name="studentName" autocomplete="name" required>
           <span class="form-error" id="err-studentName"></span>
         </div>
 
         <div class="form-row">
-          <label for="parentName">Parent / Guardian Name</label>
+          <label for="parentName">Parent / Guardian Name <span class="form-required" aria-hidden="true">*</span></label>
           <input type="text" id="parentName" name="parentName" autocomplete="name">
           <span class="form-error" id="err-parentName"></span>
         </div>
 
         <div class="form-row">
-          <label for="phone">Phone Number</label>
+          <label for="phone">Phone Number <span class="form-required" aria-hidden="true">*</span></label>
           <input type="tel" id="phone" name="phone" autocomplete="tel" required>
           <span class="form-error" id="err-phone"></span>
         </div>
 
         <div class="form-row form-row--split">
           <div>
-            <label for="studentClass">Class</label>
+            <label for="studentClass">Class <span class="form-required" aria-hidden="true">*</span></label>
             <select id="studentClass" name="studentClass" required>
               <option value="">Select class</option>
               <option>Class IX</option>
@@ -430,7 +430,7 @@
             <span class="form-error" id="err-studentClass"></span>
           </div>
           <div>
-            <label for="course">Course</label>
+            <label for="course">Course <span class="form-required" aria-hidden="true">*</span></label>
             <select id="course" name="course" required>
               <option value="">Select course</option>
               <option>School Classes</option>
@@ -444,7 +444,7 @@
         </div>
 
         <div class="form-row">
-          <label for="message">Message</label>
+          <label for="message">Message <span class="form-required" aria-hidden="true">*</span></label>
           <textarea id="message" name="message" rows="4"></textarea>
           <span class="form-error" id="err-message"></span>
         </div>

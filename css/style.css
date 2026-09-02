@@ -975,26 +975,47 @@ p { margin: 0; }
 .contact__channel-sub { display: block; font-size: 0.82rem; color: var(--color-muted); }
 
 .contact__form {
-  background: var(--color-off-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-8);
+  width: 100%;
+  max-width: 920px;
+  background: var(--color-white);
+  border: 0;
+  border-radius: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
+  gap: 28px;
   min-width: 0;
 }
-.form-row { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
-.form-row label { font-size: 0.85rem; font-weight: 600; color: var(--color-primary-dark); }
+.form-row { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.form-row label { font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); }
+.form-required {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+  border-radius: 50%;
+  background: #E5E7EB;
+  color: #6B7280;
+  font-size: 0.7rem;
+  line-height: 1;
+  vertical-align: 2px;
+}
 .form-row input, .form-row select, .form-row textarea {
   width: 100%;
   min-width: 0;
-  padding: 12px 14px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  border: 1px solid #D1D5DB;
+  border-radius: 11px;
   background: var(--color-white);
+  color: var(--color-primary-dark);
+  font-size: 1rem;
+  min-height: 50px;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
+.form-row input::placeholder, .form-row textarea::placeholder { color: #9CA3AF; }
+.form-row textarea { min-height: 156px; resize: vertical; }
 .form-row input:focus, .form-row select:focus, .form-row textarea:focus {
   border-color: var(--color-accent);
   box-shadow: 0 0 0 3px rgba(61,99,168,0.15);
@@ -1003,12 +1024,11 @@ p { margin: 0; }
 .form-row input.is-invalid, .form-row select.is-invalid, .form-row textarea.is-invalid {
   border-color: #C0392B;
 }
-.form-row--split { flex-direction: row; gap: var(--space-4); min-width: 0; }
-.form-row--split > div { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.form-row--split { flex-direction: column; gap: 28px; min-width: 0; }
+.form-row--split > div { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 14px; }
 .form-error { font-size: 0.78rem; color: #C0392B; min-height: 1em; }
 .contact__submit { margin-top: var(--space-2); }
 .contact__success { color: #1E7A46; font-size: 0.9rem; font-weight: 600; }
-.contact__success.is-error { color: #C0392B; }
 
 /* ==========================================================================
    Map
