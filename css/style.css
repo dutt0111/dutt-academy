@@ -1008,6 +1008,7 @@ p { margin: 0; }
 .form-error { font-size: 0.78rem; color: #C0392B; min-height: 1em; }
 .contact__submit { margin-top: var(--space-2); }
 .contact__success { color: #1E7A46; font-size: 0.9rem; font-weight: 600; }
+.contact__success.is-error { color: #C0392B; }
 
 /* ==========================================================================
    Map

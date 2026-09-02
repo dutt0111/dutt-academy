@@ -913,6 +913,8 @@
     if (!form) return;
 
     const successMessage = document.getElementById('formSuccess');
+    const submitButton = form.querySelector('button[type="submit"]');
+    const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbyVJwqxWvpvezPArwkoHlNAHKrHg7nyoRa_CYT2aslJJ0hs2o-z-wW3W-VnuFPXKyuPpQ/exec';
 
     const validators = {
       studentName: function (value) {
@@ -965,11 +967,46 @@
         return;
       }
 
-      // No backend is wired up yet — replace this block with a real
-      // submission (fetch/AJAX call, WATI/CRM webhook, etc.) per README.md.
-      form.reset();
-      fieldsToCheck.forEach(function (fieldName) { showError(fieldName, ''); });
-      if (successMessage) successMessage.hidden = false;
+      if (successMessage) {
+        successMessage.hidden = true;
+        successMessage.classList.remove('is-error');
+      }
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Submitting...';
+      }
+
+      const formData = new URLSearchParams();
+      ['studentName', 'parentName', 'phone', 'studentClass', 'course', 'message'].forEach(function (fieldName) {
+        formData.append(fieldName, form.elements[fieldName].value);
+      });
+
+      fetch(appsScriptUrl, {
+        method: 'POST',
+        body: formData
+      })
+        .then(function (response) {
+          if (!response.ok) throw new Error('Submission failed');
+          form.reset();
+          fieldsToCheck.forEach(function (fieldName) { showError(fieldName, ''); });
+          if (successMessage) {
+            successMessage.textContent = 'Thank you — your enquiry has been noted. Our team will reach out shortly.';
+            successMessage.hidden = false;
+          }
+        })
+        .catch(function () {
+          if (successMessage) {
+            successMessage.textContent = 'Something went wrong. Please try again.';
+            successMessage.classList.add('is-error');
+            successMessage.hidden = false;
+          }
+        })
+        .finally(function () {
+          if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.textContent = 'Submit Enquiry';
+          }
+        });
     });
   }
 
