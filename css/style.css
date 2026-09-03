@@ -987,6 +987,7 @@ p { margin: 0; }
   min-width: 0;
 }
 .form-row { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.form-row[hidden] { display: none; }
 .form-row label { font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); }
 .form-required {
   display: inline-flex;

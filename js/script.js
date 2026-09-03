@@ -914,6 +914,9 @@
 
     const successMessage = document.getElementById('formSuccess');
     const submitButton = form.querySelector('button[type="submit"]');
+    const classField = form.elements.studentClass;
+    const otherClassField = document.getElementById('otherClassField');
+    const otherClassInput = form.elements.otherClass;
     const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbw77k6xuUebeKfqHjZA4vLOg0Gqs2WgdFjI9zWvWfTFThz2woe3hDVsgsTTphzZoTJCwA/exec';
     let isSubmitting = false;
 
@@ -928,10 +931,23 @@
       studentClass: function (value) {
         return value ? '' : 'Please select a class.';
       },
+      otherClass: function (value) {
+        return classField.value === 'Other' && !value.trim() ? 'Please specify your class.' : '';
+      },
       course: function (value) {
         return value ? '' : 'Please select a course.';
       }
     };
+
+    function updateOtherClassField() {
+      const isOther = classField.value === 'Other';
+      otherClassField.hidden = !isOther;
+      otherClassInput.required = isOther;
+      if (!isOther) {
+        otherClassInput.value = '';
+        showError('otherClass', '');
+      }
+    }
 
     function showError(fieldName, message) {
       const field = form.elements[fieldName];
@@ -953,6 +969,9 @@
       if (!field) return;
       field.addEventListener('blur', function () { validateField(fieldName); });
     });
+
+    classField.addEventListener('change', updateOtherClassField);
+    updateOtherClassField();
 
     form.addEventListener('submit', function (event) {
       event.preventDefault();
@@ -980,7 +999,7 @@
       isSubmitting = true;
 
       const formData = new URLSearchParams();
-      ['studentName', 'parentName', 'phone', 'studentClass', 'course', 'message'].forEach(function (fieldName) {
+      ['studentName', 'parentName', 'phone', 'studentClass', 'otherClass', 'course', 'message'].forEach(function (fieldName) {
         formData.append(fieldName, form.elements[fieldName].value);
       });
 
@@ -991,6 +1010,7 @@
         .then(function (response) {
           if (!response.ok) throw new Error('Submission failed');
           form.reset();
+          updateOtherClassField();
           fieldsToCheck.forEach(function (fieldName) { showError(fieldName, ''); });
           if (successMessage) {
             successMessage.textContent = 'Thank you — your enquiry has been noted. Our team will reach out shortly.';

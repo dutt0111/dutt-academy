@@ -3,14 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dutt Academy | Let's Aim For Success</title>
-<meta name="description" content="Dutt Academy is a Delhi-based coaching institute focused on building strong academic foundations through expert guidance, focused learning and disciplined exam preparation.">
+<title>Dutt Academy | Coaching &amp; Exam Preparation in Delhi</title>
+<meta name="description" content="Dutt Academy is a coaching institute in Delhi offering school coaching, board exam preparation, competitive exam preparation, academic coaching and focused student learning.">
+<meta name="robots" content="index, follow">
+<!-- Replace YOUR-DOMAIN.example with the real production domain before deployment. -->
+<link rel="canonical" href="https://YOUR-DOMAIN.example/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Dutt Academy | Let's Aim For Success">
-<meta property="og:description" content="Building strong foundations. Creating successful futures. Explore Dutt Academy's courses and student achievements.">
-<meta property="og:image" content="assets/logo/dutt-academy-mark-lg.png">
+<meta property="og:url" content="https://YOUR-DOMAIN.example/">
+<meta property="og:title" content="Dutt Academy | Coaching &amp; Exam Preparation in Delhi">
+<meta property="og:description" content="Explore Dutt Academy's school coaching, board exam preparation, competitive exam preparation and focused academic learning in Delhi.">
+<meta property="og:image" content="https://YOUR-DOMAIN.example/assets/logo/dutt-academy-mark-lg.png">
+<meta property="og:image:alt" content="Dutt Academy">
+<meta property="og:site_name" content="Dutt Academy">
+
+<!-- Twitter/X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dutt Academy | Coaching &amp; Exam Preparation in Delhi">
+<meta name="twitter:description" content="School coaching, board exam preparation, competitive exam preparation and focused academic learning from Dutt Academy in Delhi.">
+<meta name="twitter:image" content="https://YOUR-DOMAIN.example/assets/logo/dutt-academy-mark-lg.png">
+<meta name="twitter:image:alt" content="Dutt Academy">
 
 <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon-16.png">
@@ -22,6 +35,32 @@
 
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/responsive.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://YOUR-DOMAIN.example/#organization",
+      "name": "Dutt Academy",
+      "url": "https://YOUR-DOMAIN.example/",
+      "description": "Dutt Academy is a Delhi-based coaching institute focused on strong academic foundations, school classes, board preparation, competitive exam preparation and disciplined learning.",
+      "logo": "https://YOUR-DOMAIN.example/assets/logo/dutt-academy-mark-lg.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://YOUR-DOMAIN.example/#website",
+      "url": "https://YOUR-DOMAIN.example/",
+      "name": "Dutt Academy",
+      "description": "Coaching and exam preparation in Delhi from Dutt Academy.",
+      "publisher": {
+        "@id": "https://YOUR-DOMAIN.example/#organization"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -32,7 +71,7 @@
   <div class="container navbar__inner">
     <a href="#home" class="navbar__brand" aria-label="Dutt Academy home">
       <span class="navbar__logo-chip">
-        <img src="assets/logo/dutt-academy-mark-sm.png" alt="" class="navbar__logo-img" width="160" height="119">
+        <img src="assets/logo/dutt-academy-mark-sm.png" alt="Dutt Academy" class="navbar__logo-img" width="160" height="119">
         <span class="navbar__wordmark">
           <span class="navbar__wordmark-name">Dutt Academy</span>
           <span class="navbar__wordmark-tag">Let&rsquo;s Aim For Success</span>
@@ -428,6 +467,11 @@
               <option>Other</option>
             </select>
             <span class="form-error" id="err-studentClass"></span>
+            <div class="form-row" id="otherClassField" hidden>
+              <label for="otherClass">Please specify your class</label>
+              <input type="text" id="otherClass" name="otherClass" placeholder="Enter your class or course">
+              <span class="form-error" id="err-otherClass"></span>
+            </div>
           </div>
           <div>
             <label for="course">Course <span class="form-required" aria-hidden="true">*</span></label>
