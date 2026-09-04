@@ -27,19 +27,46 @@
 </header>
 
 <main id="main-content">
-  <section class="hero" aria-labelledby="page-not-found-title">
-    <div class="container hero__inner">
-      <div class="hero__content">
-        <p class="eyebrow eyebrow--light">404</p>
-        <h1 class="hero__headline" id="page-not-found-title">Page Not Found</h1>
-        <p class="hero__lede">The page you&rsquo;re looking for doesn&rsquo;t exist or may have been moved.</p>
-        <div class="hero__actions">
-          <a href="index.html" class="btn btn--gold">Back to Home</a>
-          <a href="index.html#courses" class="btn btn--outline-light">Explore Courses</a>
-        </div>
+  <section class="not-found" aria-labelledby="page-not-found-title">
+    <div class="container not-found__inner">
+      <div class="not-found__content">
+        <p class="not-found__code">404</p>
+        <h1 class="not-found__title" id="page-not-found-title">Oops! Page Not Found</h1>
+        <p class="not-found__message">The page you&rsquo;re looking for doesn&rsquo;t exist or has been moved.</p>
+        <span class="not-found__rule" aria-hidden="true"></span>
+        <p class="not-found__return-message">Let&rsquo;s get you back on track.</p>
+        <a href="index.html" class="btn btn--primary not-found__home-button">Back to Home</a>
+      </div>
+
+      <div class="not-found__illustration" aria-label="A Dutt Academy signpost and books illustration" role="img">
+        <span class="not-found__sun" aria-hidden="true"></span>
+        <span class="not-found__post" aria-hidden="true"></span>
+        <span class="not-found__sign not-found__sign--top" aria-hidden="true">THIS WAY</span>
+        <span class="not-found__sign not-found__sign--bottom" aria-hidden="true">THAT WAY</span>
+        <span class="not-found__book not-found__book--top" aria-hidden="true"></span>
+        <span class="not-found__book not-found__book--middle" aria-hidden="true"></span>
+        <span class="not-found__book not-found__book--bottom" aria-hidden="true"></span>
+        <span class="not-found__ground" aria-hidden="true"></span>
       </div>
     </div>
   </section>
+
+  <section class="not-found__help" aria-label="Contact support">
+    <div class="container">
+      <p>Need help? <a href="index.html#contact">Contact us</a> and we&rsquo;ll be happy to assist you.</p>
+    </div>
+  </section>
 </main>
+
+<footer class="footer">
+  <div class="container footer__bottom">
+    <p>&copy; 2026 Dutt Academy &mdash; All Rights Reserved</p>
+    <p class="footer__slogan">Let&rsquo;s Aim For Success</p>
+    <nav class="footer__legal-links" aria-label="Legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+    </nav>
+  </div>
+</footer>
 </body>
 </html>

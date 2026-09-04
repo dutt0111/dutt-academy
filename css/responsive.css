@@ -26,9 +26,25 @@
   .hero__visual { height: 340px; order: -1; margin-bottom: var(--space-6); }
   .hero__lede { max-width: 100%; }
 
+  .not-found__inner { grid-template-columns: 1fr; gap: var(--space-6); min-height: 0; }
+  .not-found__content { text-align: center; }
+  .not-found__message { margin-left: auto; margin-right: auto; }
+  .not-found__rule { margin-left: auto; margin-right: auto; }
+  .not-found__illustration { order: -1; height: 330px; max-width: 560px; }
+  .not-found__post { height: 220px; bottom: 46px; }
+  .not-found__sun { width: 240px; height: 240px; top: 24px; }
+  .not-found__sign--top { top: 89px; }
+  .not-found__sign--bottom { top: 146px; }
+  .not-found__book--top { bottom: 66px; }
+  .not-found__book--middle { bottom: 43px; }
+  .not-found__book--bottom { bottom: 22px; }
+  .not-found__ground { bottom: 17px; }
+
   .about__grid { grid-template-columns: 1fr; }
 
   .feature-list { grid-template-columns: 1fr; }
+
+  .special-batches__grid { grid-template-columns: 1fr; }
 
   .courses__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
@@ -92,6 +108,28 @@
   .hero__card { padding: 10px 14px; }
   .hero__card-value { font-size: 0.95rem; }
 
+  .not-found { padding-top: calc(var(--navbar-height) + var(--space-6)); }
+  .not-found__illustration { height: 270px; border-radius: var(--radius-md); }
+  .not-found__code { font-size: 5.5rem; }
+  .not-found__title { font-size: 2rem; }
+  .not-found__message { font-size: 0.95rem; }
+  .not-found__sign { width: 140px; height: 42px; font-size: 0.58rem; }
+  .not-found__sign--top { left: calc(50% - 126px); top: 72px; }
+  .not-found__sign--bottom { left: calc(50% - 10px); top: 119px; }
+  .not-found__post { width: 17px; height: 175px; bottom: 36px; }
+  .not-found__sun { width: 195px; height: 195px; top: 16px; }
+  .not-found__book { left: calc(50% - 106px); width: 138px; height: 21px; border-width: 4px; box-shadow: 7px 6px 0 var(--color-gold); }
+  .not-found__book--top { bottom: 49px; }
+  .not-found__book--middle { bottom: 30px; left: calc(50% - 96px); box-shadow: 7px 6px 0 var(--color-primary); }
+  .not-found__book--bottom { bottom: 14px; left: calc(50% - 87px); }
+  .not-found__ground { bottom: 10px; }
+  .not-found__help { font-size: 0.9rem; }
+
+  .special-batch-card { grid-template-columns: minmax(0, 1fr) 34%; min-height: 220px; }
+  .special-batch-card__content { padding: var(--space-4); }
+  .special-batch-card__title { font-size: 1.18rem; }
+  .special-batch-card__image { min-height: 220px; }
+
   .stats__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 
   .courses__grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
@@ -154,6 +192,7 @@
   }
 
   .results__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .results__value--percentile { font-size: 1.5rem; }
 
   .form-row--split { flex-direction: column; }
 
@@ -161,6 +200,7 @@
   .student-modal__header { flex-direction: column; text-align: center; }
 
   .footer__bottom { flex-direction: column; text-align: center; }
+  .footer__legal-links { justify-content: center; }
 }
 
 @media (max-width: 375px) {
@@ -174,4 +214,5 @@
   .student-card__cta { font-size: 0.72rem; padding: 6px 4px; min-height: 34px; }
   .hero__headline { font-size: 1.9rem; }
   .section-title { font-size: 1.6rem; }
+  .results__value--percentile { font-size: 1.3rem; }
 }

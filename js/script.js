@@ -917,6 +917,7 @@
     const classField = form.elements.studentClass;
     const otherClassField = document.getElementById('otherClassField');
     const otherClassInput = form.elements.otherClass;
+    const privacyConsent = form.elements.privacyConsent;
     const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbw77k6xuUebeKfqHjZA4vLOg0Gqs2WgdFjI9zWvWfTFThz2woe3hDVsgsTTphzZoTJCwA/exec';
     let isSubmitting = false;
 
@@ -936,6 +937,9 @@
       },
       course: function (value) {
         return value ? '' : 'Please select a course.';
+      },
+      privacyConsent: function (value, field) {
+        return field.checked ? '' : 'Please agree to the Privacy Policy before submitting.';
       }
     };
 
@@ -959,7 +963,7 @@
     function validateField(fieldName) {
       const field = form.elements[fieldName];
       if (!field || !validators[fieldName]) return true;
-      const message = validators[fieldName](field.value);
+      const message = validators[fieldName](field.value, field);
       showError(fieldName, message);
       return !message;
     }
@@ -971,6 +975,7 @@
     });
 
     classField.addEventListener('change', updateOtherClassField);
+    privacyConsent.addEventListener('change', function () { validateField('privacyConsent'); });
     updateOtherClassField();
 
     form.addEventListener('submit', function (event) {

@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-# Replace YOUR-DOMAIN.example with the real production domain before deployment.
-Sitemap: https://YOUR-DOMAIN.example/sitemap.xml
+
+Sitemap: https://duttacademy.in/sitemap.xml
