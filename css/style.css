@@ -456,6 +456,10 @@ p { margin: 0; }
 .special-batch-card__image--chemistry img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 28%; }
 .special-batch-card__image--physics { overflow: hidden; }
 .special-batch-card__image--physics img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 24%; }
+.special-batch-card__image--akash { overflow: hidden; }
+.special-batch-card__image--akash img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+.special-batch-card__image--sl { overflow: hidden; }
+.special-batch-card__image--sl img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
 
 /* ==========================================================================
    Courses
